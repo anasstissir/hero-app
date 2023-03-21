@@ -1,4 +1,3 @@
-// src/SearchContext.js
 import { createContext, useState } from 'react';
 
 const SearchContext = createContext();
