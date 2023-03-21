@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HeroDetails from './features/HeroDetails';
+import TopBar from './components/TopBar';
+import Home from './pages/Home';
+import { SearchProvider } from './utils/SearchContext';
+import { HeroProvider } from './utils/HeroContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <SearchProvider>
+        <HeroProvider>
+          <div className="App bg-gray-900 min-h-screen">
+            <TopBar />
+            <div className="p-6 pt-20">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/hero/:id" element={<HeroDetails />} />
+              </Routes>
+            </div>
+          </div>
+        </HeroProvider>
+      </SearchProvider>
+    </Router>
   );
 }
 
