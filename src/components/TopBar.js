@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Import your logo image file
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import { FiSearch } from 'react-icons/fi';
 import SearchContext from '../utils/SearchContext';
 
-const NavBar = () => {
+const TopBar = () => {
   const [show, setShow] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const searchBarRef = useRef();
+  const location = useLocation();
 
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
 
@@ -28,6 +29,7 @@ const NavBar = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
+    console.log(location);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -42,26 +44,30 @@ const NavBar = () => {
         <Link to="/">
           <img src={logo} alt="Your Logo" className="h-10 w-auto" />
         </Link>
-        <nav className="flex items-center">
-          <div className="relative ml-4 flex items-center" ref={searchBarRef}>
-            <button className="text-white text-2xl" onClick={() => setSearchVisible(!searchVisible)}>
-              <FiSearch />
-            </button>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-              className={`${
-                searchVisible ? 'w-64 pl-10' : 'w-0 pl-0'
-              } absolute top-0 left-0 bg-black border-b-2 border-white text-white transition-all duration-300`}
-              placeholder="Search Hero..."
-              onFocus={() => setSearchVisible(true)}
-            />
-          </div>
-        </nav>
+        {location.pathname === '/' && (
+          <nav className="flex items-center">
+            <div className="relative ml-4 flex items-center" ref={searchBarRef}>
+              <button className="text-white text-2xl" onClick={() => setSearchVisible(!searchVisible)}>
+                <FiSearch />
+              </button>
+              {searchVisible && (
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                  className={`${
+                    searchVisible ? 'w-64 pl-10' : 'w-0 pl-0'
+                  } absolute top-0 left-0 bg-black border-b-2 border-white text-white transition-all duration-300`}
+                  placeholder="Search Hero..."
+                  onFocus={() => setSearchVisible(true)}
+                />
+              )}
+            </div>
+          </nav>
+        )}
       </div>
     </div>
   );
 };
 
-export default NavBar;
+export default TopBar;

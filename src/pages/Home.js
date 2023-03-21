@@ -22,7 +22,6 @@ const Home = ({}) => {
   }
 
   useEffect(() => {
-    console.log('effect');
     fetchAllHeroes();
   }, []);
 

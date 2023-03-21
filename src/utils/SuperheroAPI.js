@@ -1,15 +1,14 @@
 import axios from 'axios';
 
+// We should add the url on .env file but for this assignment we do it here
 const BASE_URL = 'https://akabab.github.io/superhero-api/api';
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
 });
 
-// Request interceptor
 apiClient.interceptors.request.use(
   config => {
-    // Add any logic before sending the request, e.g., add authentication headers
     console.log('Request:', config);
     return config;
   },
@@ -23,7 +22,6 @@ apiClient.interceptors.request.use(
 // Response interceptor
 apiClient.interceptors.response.use(
   response => {
-    // Add any logic after receiving the response, e.g., handling custom error codes
     console.log('Response:', response);
     return response;
   },

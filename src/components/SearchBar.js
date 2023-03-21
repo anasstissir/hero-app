@@ -7,6 +7,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
       type="text"
       placeholder="Search for a superhero..."
       value={searchTerm}
+      defaultValue={null}
       onChange={e => setSearchTerm(e.target.value)}
     />
   );
