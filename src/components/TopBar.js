@@ -29,7 +29,6 @@ const TopBar = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
-    console.log(location);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);

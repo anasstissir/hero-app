@@ -7,12 +7,20 @@ import 'react-multi-carousel/lib/styles.css';
 const HeroList = ({ heroes, race }) => {
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1024 },
+      breakpoint: { max: 4000, min: 2000 },
       items: 7,
     },
+    superLargeDesktop: {
+      breakpoint: { max: 2000, min: 1024 },
+      items: 5,
+    },
     tablet: {
-      breakpoint: { max: 1024, min: 600 },
+      breakpoint: { max: 1024, min: 800 },
       items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 800, min: 600 },
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 600, min: 0 },
@@ -24,7 +32,7 @@ const HeroList = ({ heroes, race }) => {
     <>
       {heroes.length > 0 && (
         <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-white mb-4">{race || 'N/A'}</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{race || 'N/A'}</h2>
           <Carousel
             swipeable={true}
             draggable={true}
