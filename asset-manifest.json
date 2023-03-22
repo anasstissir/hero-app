@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/hero-app/static/css/main.62ea0daa.css",
-    "main.js": "/hero-app/static/js/main.c6e3781e.js",
+    "main.css": "/hero-app/static/css/main.494ed84b.css",
+    "main.js": "/hero-app/static/js/main.301ce6c8.js",
     "static/js/787.b1f56149.chunk.js": "/hero-app/static/js/787.b1f56149.chunk.js",
     "static/media/logo.png": "/hero-app/static/media/logo.0410f931ac1856acd4da.png",
+    "static/media/all.jpeg": "/hero-app/static/media/all.d76c9a699dcb45b5cf40.jpeg",
     "static/media/revicons.eot": "/hero-app/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/hero-app/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/hero-app/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/hero-app/index.html",
-    "main.62ea0daa.css.map": "/hero-app/static/css/main.62ea0daa.css.map",
-    "main.c6e3781e.js.map": "/hero-app/static/js/main.c6e3781e.js.map",
+    "main.494ed84b.css.map": "/hero-app/static/css/main.494ed84b.css.map",
+    "main.301ce6c8.js.map": "/hero-app/static/js/main.301ce6c8.js.map",
     "787.b1f56149.chunk.js.map": "/hero-app/static/js/787.b1f56149.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62ea0daa.css",
-    "static/js/main.c6e3781e.js"
+    "static/css/main.494ed84b.css",
+    "static/js/main.301ce6c8.js"
   ]
 }
