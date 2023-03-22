@@ -56,11 +56,11 @@ const Hero = ({ hero }) => {
   };
 
   return (
-    <div className="relative">
-      <img src={lg} alt={name} className="w-full h-[60vh] object-cover blur-xl" />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black to-transparent pb-12">
+    <div className="relative mt-10">
+      <img src={lg} alt={name} className="w-full hidden md:block md:h-[60vh] object-cover blur-xl" />
+      <div className="md:absolute md:inset-x-0 md:bottom-0 bg-gradient-to-t from-black to-transparent pb-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-white text-4xl font-bold mb-4">{name}</h2>
+          <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">{name}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
             <div>
               <img src={sm} alt={name} className="w-auto" />
@@ -82,7 +82,7 @@ const Hero = ({ hero }) => {
                 <strong>Occupation:</strong> {occupation}
               </p>
             </div>
-            <div className="w-auto absolute right-0 text-white">
+            <div className="w-auto md:absolute right-0 text-white">
               <Radar data={data} options={options} />
             </div>
           </div>

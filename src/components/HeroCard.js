@@ -10,7 +10,7 @@ const HeroCard = ({ hero }) => {
       />
       <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg" />
       <div className="absolute bottom-0 left-0 w-full h-16 flex items-end justify-between p-2 text-white">
-        <span className="font-semibold transform transition-all duration-300 group-hover:translate-y-[-8] group-hover:text-2xl">
+        <span className="font-semibold text-lg md:text-xl transform transition-all duration-300 group-hover:translate-y-[-8] group-hover:text-2xl">
           {hero.name}
         </span>
       </div>
